@@ -1,0 +1,245 @@
+/* ============================================================
+   estilos.css – Hoja de estilos principal
+   Universidad Tecnológica de Panamá, Coclé
+   ============================================================ */
+
+/* ---------- Reset básico ---------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Encabezado ---------- */
+.encabezado {
+    background-color: #003580;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.encabezado__logo {
+    font-size: 2.5rem;
+}
+
+.encabezado__titulo {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.encabezado__subtitulo {
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+/* ---------- Navegación ---------- */
+.navegacion {
+    background-color: #0051a8;
+    display: flex;
+    gap: 0.25rem;
+    padding: 0 1rem;
+    flex-wrap: wrap;
+}
+
+.navegacion a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+    display: inline-block;
+    font-size: 0.95rem;
+    transition: background-color 0.2s;
+}
+
+.navegacion a:hover,
+.navegacion a:focus {
+    background-color: #003580;
+    outline: none;
+}
+
+/* ---------- Contenedor principal ---------- */
+.contenedor {
+    max-width: 860px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+.contenedor--pequeño {
+    max-width: 420px;
+}
+
+/* ---------- Bienvenida ---------- */
+.bienvenida {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.bienvenida h2 {
+    font-size: 1.6rem;
+    color: #003580;
+    margin-bottom: 0.5rem;
+}
+
+/* ---------- Tarjetas ---------- */
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+}
+
+.tarjeta {
+    background-color: #f0f4ff;
+    border: 1px solid #ccd6f0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.tarjeta h3 {
+    font-size: 1.1rem;
+    color: #003580;
+}
+
+.tarjeta p {
+    font-size: 0.9rem;
+    color: #555;
+    flex: 1;
+}
+
+/* ---------- Formularios ---------- */
+h1 {
+    color: #003580;
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid #b0bcd4;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0051a8;
+    box-shadow: 0 0 0 3px rgba(0,81,168,0.15);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* ---------- Botones ---------- */
+.boton,
+button[type="submit"] {
+    display: inline-block;
+    background-color: #003580;
+    color: #fff;
+    border: none;
+    padding: 0.65rem 1.5rem;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+.boton:hover,
+button[type="submit"]:hover {
+    background-color: #0051a8;
+}
+
+/* ---------- Mensajes de estado ---------- */
+.mensaje-exito {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.mensaje-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 0.75rem 1rem 0.75rem 2rem;
+    margin-bottom: 1rem;
+}
+
+.mensaje-error li {
+    margin-bottom: 0.25rem;
+}
+
+/* ---------- Pie de página ---------- */
+.pie {
+    margin-top: auto;
+    background-color: #003580;
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+}
+
+/* ---------- Links ---------- */
+a {
+    color: #0051a8;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .encabezado {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contenedor {
+        margin: 1rem;
+        padding: 1.25rem;
+    }
+}
